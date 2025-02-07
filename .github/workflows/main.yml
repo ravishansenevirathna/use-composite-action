@@ -9,7 +9,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Composite Action from Another Repository
-        uses: ravishansenevirathna/my-composite-action/.github/actions/setup-environment@main
+      - name: Checkout External Action Repository
+        uses: actions/checkout@v4
+        with:
+          repository: ravishansenevirathna/my-composite-action
+          ref: main
+          path: my-composite-action
+
+      - name: Use Composite Action from External Repo
+        uses: ./my-composite-action/.github/actions/setup-environment
         with:
           node-version: "18"
