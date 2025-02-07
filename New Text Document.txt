@@ -1,0 +1,63 @@
+🚀 Step 2: Create Repository 2 (use-composite-action)
+This repo will use the composite action from my-composite-action.
+
+2.1 Create and Clone the Repository
+Create a new GitHub repository named use-composite-action.
+Clone it:
+sh
+Copy
+Edit
+git clone https://github.com/your-username/use-composite-action.git
+cd use-composite-action
+2.2 Create Workflow File
+Run:
+
+sh
+Copy
+Edit
+mkdir -p .github/workflows
+touch .github/workflows/main.yml
+2.3 Define Workflow to Use the Composite Action
+Edit .github/workflows/main.yml:
+
+yaml
+Copy
+Edit
+name: "Use External Composite Action"
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Composite Action from Another Repository
+        uses: your-username/my-composite-action/.github/actions/setup-environment@main
+        with:
+          node-version: "18"
+2.4 Commit and Push
+sh
+Copy
+Edit
+git add .
+git commit -m "Added workflow to use external composite action"
+git push origin main
+🎯 Step 3: Test the Workflow
+1️⃣ Go to use-composite-action repo on GitHub.
+2️⃣ Click on the "Actions" tab.
+3️⃣ You should see the workflow running.
+4️⃣ Check the logs → You will see that it has successfully executed the composite action from my-composite-action.
+
+🎯 Summary
+✅ Created a composite action in my-composite-action
+✅ Used it in another repository (use-composite-action)
+✅ Successfully ran the workflow
+
+🔥 Next Steps
+Try modifying the composite action to include a linter (e.g., ESLint).
+Add a deployment step for a Node.js application.
+Store secrets and use them inside the action.
+Would you like to extend this example with additional features? 🚀
