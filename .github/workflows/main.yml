@@ -17,6 +17,6 @@ jobs:
           path: my-composite-action
 
       - name: Use Composite Action from External Repo
-        uses: ravishansenevirathna/my-composite-action@v1.0.0
+        uses: ravishansenevirathna/my-composite-action@v1
         with:
           node-version: "18"
