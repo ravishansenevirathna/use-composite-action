@@ -10,6 +10,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Use Composite Action from Another Repository
-        uses: your-username/my-composite-action/.github/actions/setup-environment@main
+        uses: ravishansenevirathna/my-composite-action/.github/actions/setup-environment@main
         with:
           node-version: "18"
