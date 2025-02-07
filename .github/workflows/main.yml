@@ -1,0 +1,15 @@
+name: "Use External Composite Action"
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Composite Action from Another Repository
+        uses: your-username/my-composite-action/.github/actions/setup-environment@main
+        with:
+          node-version: "18"
