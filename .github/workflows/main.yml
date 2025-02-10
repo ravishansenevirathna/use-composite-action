@@ -9,14 +9,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Checkout External Action Repository
-        uses: actions/checkout@v4
-        with:
-          repository: ravishansenevirathna/my-composite-action
-          ref: main
-          path: my-composite-action
+      # - name: Checkout External Action Repository
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: ravishansenevirathna/my-composite-action
+      #     ref: main
+      #     path: my-composite-action
 
       - name: Use Composite Action from External Repo
-        uses: ravishansenevirathna/my-composite-action@v2
+        uses: ravishansenevirathna/my-composite-action@v5
         with:
           node-version: "18"
